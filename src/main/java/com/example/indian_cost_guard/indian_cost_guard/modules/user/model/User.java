@@ -17,12 +17,16 @@ import java.util.UUID;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
 
     @Column(nullable = false, unique = true, length = 50)
     private String username;
+
+
+    @Column(nullable = false, length = 100)
+    private String fullName;
 
     @Column(nullable = false, unique = true, length = 100)
     private String email;
@@ -30,7 +34,7 @@ public class User {
     @Column(nullable = false, name = "password_hash")
     private String password;
 
-    @Column(nullable = true, name = "is_active")
+    @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
 
