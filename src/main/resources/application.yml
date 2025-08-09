@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: indian_cost_guard
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/indian-cost-guard
+    username: postgres
+    password: 1234
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
